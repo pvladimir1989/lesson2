@@ -51,11 +51,24 @@ def planet(update, context):
 
 
 def planet_select(update, context):
-    user_text = update.message.text
-    if user_text =='Mars':
-        pl=ephem.Mars(currentYear)
-        constel=ephem.constellation(pl)
+    # user_text = update.message.text
+    # if user_text =='Mars':
+    #   # var=getattr(ephem,user_text)
+    #     pl=ephem.Mars(currentYear)
+    #     constel=ephem.constellation(pl)
+    #     update.message.reply_text(constel)
+    try:
+        user_text = update.message.text
+        var = getattr(ephem, user_text)
+        pl = var(currentYear)
+        constel = ephem.constellation(pl)
         update.message.reply_text(constel)
+
+    except:
+        update.message.reply_text("Такой планеты не существует. Введите другую планету!")
+
+
+
 
 def main():
     mybot = Updater("1397084816:AAFWzpPtbPawQrxl1meF9GkRKZUu0yz2XGU", request_kwargs=PROXY,use_context=True)

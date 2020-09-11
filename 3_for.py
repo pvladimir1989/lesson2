@@ -21,12 +21,12 @@ def main():
          {'cl':'4a','scores':[3,4,3,1,5]}]
 
     count=0
-    _sum=0
+    sum1=0
     for pupil in lst:
         for i in (pupil['scores']):
-            _sum=_sum+i
+            sum1=sum1+i
             count=count+1
-    print("Средняя оценка в школе: ",_sum/count)
+    print("Средняя оценка в школе: ",sum1/count)
 
     for pupil in lst:
         for e in [pupil]:

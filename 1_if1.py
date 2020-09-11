@@ -20,15 +20,18 @@ def main():
     В ней надо заменить pass на ваш код
     """
     inp=int(input("Введите свой возраст:"))
-    if inp<=6:
-        print ("Ходить в детский сад")
-    elif inp>=7 and inp<=17:
-        print("Учиться в школе")
-    elif inp>=18 and inp<=25:
-        print("Учиться в институте")
-    else:
-        print("работать")
 
+    def guess_age(inp):
 
+        if inp<=6:
+            print ("Ходить в детский сад")
+        elif 7 <= inp <= 17:
+            print("Учиться в школе")
+        elif inp>=18 and inp<=25:
+            print("Учиться в институте")
+        else:
+            print("работать")
+
+    guess_age(inp)
 if __name__ == "__main__":
     main()
